@@ -14,3 +14,6 @@ npm i -g .
 ```
 geyik <sozcuk>
 ```
+
+### Kaynak
+https://www.nisanyansozluk.com
