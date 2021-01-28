@@ -6,7 +6,7 @@ const chalk = require("chalk");
 
 const word = process.argv.slice(2)[0];
 
-if (typeof word == "undefined") {
+if (typeof word === "undefined") {
   console.log(chalk.redBright("Lütfen bir sözcük giriniz."));
   return;
 }
@@ -17,7 +17,7 @@ request(
     const root = HTMLParser.parse(body);
     const rows = root.querySelectorAll(".hghlght .yaz .eskoken");
 
-    if (error || rows.length == 0) {
+    if (error || rows.length === 0) {
       console.log(chalk.redBright("Aradığınız sözcük bulunamadı."));
       return;
     }
