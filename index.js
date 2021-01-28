@@ -42,6 +42,7 @@ request('https://www.nisanyansozluk.com/?k=' + word, function (error, response, 
   result.origin.text = root.querySelector("meta[property=og:description]").getAttribute("content")
 
   for (const key in result) {
+    if(!result[key].text) continue
     console.log(chalk.green(result[key].title + ':'))
     console.log(chalk.white(result[key].text));
   }
