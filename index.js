@@ -29,7 +29,7 @@ request(options, (error, response, body) => {
 
   const result = {
     history: {
-      title: "Tarhiçe",
+      title: "Tarihçe",
       text: null,
     },
     origin: {
@@ -42,13 +42,29 @@ request(options, (error, response, body) => {
     },
   };
 
-  result.history.text = rows[0].rawText;
-  result.description.text = rows.find((row) =>
-    row.rawText.startsWith("Not:")
-  )?.rawText;
-  result.origin.text = root
-    .querySelector("meta[property=og:description]")
-    .getAttribute("content");
+  result.history.text = rows[0].childNodes[0].childNodes
+    .map((iterator) => {
+      if (iterator.getAttribute) {
+        if (iterator.getAttribute("title")) {
+          return chalk.redBright(iterator.getAttribute("title"));
+        } else if (iterator.getAttribute("style")?.includes("display:block;")) {
+          return `\n${iterator.rawText}\n`;
+        }
+      } else {
+        return chalk.cyan(iterator.rawText.trim());
+      }
+    })
+    .join("");
+
+  result.description.text =
+    rows
+      .find((row) => row.rawText.startsWith("Not:"))
+      ?.rawText.replace("Not:", "")
+      .trim() + "\n";
+  result.origin.text =
+    root
+      .querySelector("meta[property=og:description]")
+      .getAttribute("content") + "\n";
 
   for (const key in result) {
     if (!result[key].text) continue;
