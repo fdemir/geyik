@@ -56,11 +56,10 @@ request(options, (error, response, body) => {
     })
     .join("");
 
-  result.description.text =
-    rows
-      .find((row) => row.rawText.startsWith("Not:"))
-      ?.rawText.replace("Not:", "")
-      .trim() + "\n";
+  result.description.text = rows
+    .find((row) => row.rawText.startsWith("Not:"))
+    ?.rawText.replace("Not:", "")
+    .trim();
   result.origin.text =
     root
       .querySelector("meta[property=og:description]")
