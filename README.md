@@ -1,14 +1,17 @@
 # Geyik
 
-Geyik, sözcüklerin kökenine bakmanızı sağlayan küçük bir cli uygulamasıdır.
+Geyik, sözcüklerin kökenine bakmanızı sağlayan küçük bir CLI uygulamasıdır.
 
 ## Kurulum
 
 ```
-git clone https://github.com/fdemir/geyik.git
-cd geyik
-yarn
-npm i -g .
+npm i -g geyik
+```
+
+ya da
+
+```
+npx geyik <sozcuk>
 ```
 
 ## Kullanım
