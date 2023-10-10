@@ -4,20 +4,28 @@ Geyik, sözcüklerin kökenine bakmanızı sağlayan küçük bir CLI uygulamas�
 
 ## Kurulum
 
-```
+```bash
 npm i -g geyik
+geyik <sozcuk>
 ```
 
-ya da
+ya da direkt çalıştırmak için
 
-```
+```bash
 npx geyik <sozcuk>
 ```
+
+## Gereklilikler
+
+- Node.js
+- Npm
 
 ## Kullanım
 
 ```
+
 geyik <sozcuk>
+
 ```
 
 ![Example](example.png)
@@ -25,3 +33,7 @@ geyik <sozcuk>
 ### Kaynak
 
 https://www.nisanyansozluk.com
+
+```
+
+```
