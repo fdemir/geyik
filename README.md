@@ -17,8 +17,7 @@ npx geyik <sozcuk>
 
 ## Gereklilikler
 
-- Node.js
-- Npm
+- Node.js >= 18.17.1
 
 ## Kullanım
 
